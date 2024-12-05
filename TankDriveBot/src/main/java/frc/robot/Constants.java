@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Servo;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
  * constants. This class should not be used for any other purpose. All constants should be declared
@@ -13,12 +15,22 @@ package frc.robot;
  * constants are needed, to reduce verbosity.
  */
 public final class Constants {
+  public static Servo boxController;
+
   public static final int leftDriveMaster = 2;
   public static final int leftDriveSlave = 3;
   public static final int rightDriveMaster = 12;
   public static final int rightDriveSlave = 13;
   
+
+  public static final double joystickDeadband = 0.1;
+  
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
+  }
+
+  public static void Servo() {
+    boxController = new Servo(0);
+    boxController.setBoundsMicroseconds(2, 0, 0, 0, 1);
   }
 }

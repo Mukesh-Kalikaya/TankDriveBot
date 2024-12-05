@@ -31,7 +31,8 @@ public class Drive extends SubsystemBase {
 
     differentialDrive = new DifferentialDrive(leftMotor, rightMotor);
 
-    leftMotor.setInverted(true);
+    // leftMotor.setInverted(true);
+    rightMotor.setInverted(true);
   }
 
   @Override
@@ -39,6 +40,6 @@ public class Drive extends SubsystemBase {
   }
 
   public void setSpeed(double leftSpeed, double rightSpeed) {
-    differentialDrive.tankDrive(leftSpeed, rightSpeed);
+    differentialDrive.tankDrive(-leftSpeed, -rightSpeed);
   }
 }
